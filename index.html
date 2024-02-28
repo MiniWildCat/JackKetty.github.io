@@ -1,129 +1,208 @@
-﻿<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>index</title>
-<script type="text/javascript" src="js/jquery.js"></script>
-<link rel="stylesheet" href="css/comon0.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.3.6.js"></script>
+    <script>
+        window.onload = ()=>{
+            let titleNode = $(".title");
+            let contentNode = $(".content ul");
+            let data = `  
+1.GIS大屏/GIS可视化监控管理
+2.GIS大屏/地图数据可视化
+3.草木商品交易
+4.公安日租房智慧管理系统
+5.公安部档案管理
+6.视频监控/南方软件视频平台大屏中心
+7.视频监控(完整)
+8.智慧仓库/仓库大屏
+9.智慧城市/大数据可视化展板通用模板
+10.智慧城市/湖南省大数据可视化平台
+11.智慧城市/市突发预警平台实时监控
+12.智慧电商/广西电子商务公共服务平台大数据中心
+13.智慧电商/销售大数据页面模板
+14.智慧电商/运营大数据
+15.智慧工地/工地风险
+16.智慧工地/建筑智慧工地管控
+17.智慧工地/水质情况实时监测预警系统
+18.智慧工地/污染监管大数据显示平台
+19.智慧公安/X毒全息档案管理大屏
+20.智慧公安/北京市行政执法信息服务平台
+21.智慧公安/反诈骗
+22.智慧公安/公安局综合大数据平台
+23.智慧公司/公司大数据可视化平台
+24.智慧公司/某公司大数据展示模版
+25.智慧公司/某公司大数据展示模版标题
+26.智慧公司/某某科技有限公司-生产数据中心
+27.智慧交通/北斗车联网大数据服务平台
+28.智慧交通/车联网大数据可视化平台后台管理模板
+29.智慧交通/车辆综合管控平台
+30.智慧交通/大数据视频监控
+31.智慧交通/高速交通大数据分析平台
+32.智慧交通/交通大屏
+33.智慧交通/交通综合监控管理平台
+34.智慧交通/旅游大数据
+35.智慧交通/宁夏应急指挥综合调度大屏
+36.智慧金融/经济股票大屏
+37.智慧金融/信息风险定位系统（银行版）
+38.智慧金融/银行企业信用风险实时监测
+39.智慧景区/景区人脸监控抓拍大屏
+40.智慧景区/智慧旅游综合服务平台
+41.智慧矿产/广西矿产资源大数据监管平台
+42.智慧企业/XXX科技业务数据统计
+43.智慧企业/上市公司全景概览
+44.智慧气象/气象预报大数据平台
+45.智慧设备/观测站综合监控平台
+46.智慧设备/酒机运行状态
+47.智慧设备/设备环境监测平台
+48.智慧设备/设备监测
+49.智慧社区/社区
+50.智慧社区/智慧小区大数据分析
+51.智慧市场/联心菜市场
+52.智慧图书/全国图书零售监测数据
+53.智慧网络/无线网络大数据平台
+54.智慧物联/设备环境监测大屏
+55.智慧物联/设备统计
+56.智慧物联/物联网平台数据统计
+57.智慧物联/新能源车联网综合大数据平台
+58.智慧物联/压力容器大屏
+59.智慧物流/物联网平台数据统计
+60.智慧物流/物流大数据平台
+61.智慧物流/物流云数据看板
+62.智慧物流/智慧物流
+63.智慧消防/兰州智慧消防大数据平台
+64.智慧消防/翼兴消防监控
+65.智慧销售/门店销售智能看板
+66.智慧销售/门店营业效能分析
+67.智慧销售/销售大数据分析可视化大屏
+68.智慧销售/销售数据可视化页面设计
+69.智慧销售/销售-作战指挥室
+70.智慧医疗/大数据医疗
+71.智慧医疗/双数智慧公卫-传染病督导平台
+72.智慧医疗/医院大数据大屏
+73.智慧运维/大数据统计展示大屏
+74.智慧运维/大数据运维总览图
+75.智慧运维/集成平台运行监控系统
+76.智慧运维/可视化监控管理
+78.智慧运维/设备环境监测平台
+79.智慧运营/厅店效能大屏监控看板
+80.智慧政务/服务大数据可视化监管平台
+81.智慧政务/工商办税大数据监控平台
+82.智慧政务/国家工商总局
+83.智慧政务/互联网+惠民服务平台
+84.智慧政务/土地交易大数据可视化平台
+85.智慧政务/舆情分析
+86.智慧政务/政务大数据共享交换平台
+87.智慧政务/综合分析平台
+            `
+            let extensionData = {
+                "4":"登陆界面/登录/index.html",
+                "5":"登陆界面/登录页/login.html",
+                "7":"移动能效管理/index.html",
+                "19":"智慧公安/X毒全息档案管理大屏/html/index.html",
+                "21":"智慧公安/反诈骗/bigScreen_jj.html",
+                "22":"智慧公安/公安局综合大数据平台/demo.html",
+                "33":"智慧交通/交通综合监控管理平台/home.html",
+                "66":"智慧销售/门店营业效能分析/page/index.html",
+                "69":"智慧销售/销售-作战指挥室/Demo.html",
+                "70":"智慧医疗/大数据医疗/views/index.html",
+                "72":"智慧医疗/医院大数据大屏/views/index.html",
+                "75":"智慧运维/集成平台运行监控系统/view/index.html",
+                "79":"智慧运营/厅店效能大屏监控看板/page/index.html",
+                "82":"智慧政务/国家工商总局/html/index.html",
+                "85":"智慧政务/舆情分析/public.html",
+                "87":"智慧政务/综合分析平台/pages/index.html",
+            }
+            let extensionData2 = {
+                "3":"草木商品交易/草木商品交易", 
+                "4":"登录页面/公安日租房智慧管理系统", 
+                "5":"登录页面/公安日租房智慧管理系统", 
+                "7":"移动能效管理/视频监控", 
+            }
+            let baseUrl = 'assets/bigscreen-master/'
+            let baseUrl2 = 'assets/picture/'
+            // 处理数据
+            let newData = data.split("\n").filter(item=>!(/^[\s]+$/).test(item))
+            let newStr = ""
+            let newStr2 = ""
+            newData.forEach(item=>{
+                // 目录
+                newStr += ('<div>'+item + '</div>')
+                // 内容
+                let a = item.split(".")
+                let b = a.slice(1).join("-")
+                let page = baseUrl + (extensionData[a[0]] || b + "/index.html") 
+                let pic = baseUrl2 + (extensionData2[a[0]] || b) + '.png'
+                // 测试有效性
+                // newStr2 += `
+                //  <iframe src="${page}" ></iframe>
+                // `
+                // 真实页面节点
+                newStr2 += `
+                    <li class="wow fadeInUp ">
+                        <a target="_blank" href="${page}" class="image">
+                            <img src="${pic}" alt="">
+                        </a>
+                        <h2>${item}</h2>
+                    </li>
+                `
+            })
+            titleNode.html($(newStr));
+            contentNode.html($(newStr2));
+        }
+    </script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            width: 33.333333%;
+            animation: spinner 1.5s forwards;
+            transition-delay: 2.525s;
+            float: left;
+            height: 260px;
+            position: relative;
+        }
+        li>h2 {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            color: #aaa;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            top: 10px;
+            font-size: 20px;
+            left: 10px;
+            margin: 0;
+            position: absolute;
+            z-index: 10;
+        }
+        li>.image {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        li>.image img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s;
+        }
+    </style>
 </head>
-	<script>
-	$(window).load(function(){  
-             $(".loading").fadeOut()
-            })  
-			
-/****/
-$(document).ready(function(){
-	var whei=$(window).width()
-	$("html").css({fontSize:whei/20})
-	$(window).resize(function(){
-		var whei=$(window).width()
-	 $("html").css({fontSize:whei/20})
-});
-	});
-	</script>
-	<script type="text/javascript" src="js/echarts.min.js"></script> 
-	<script language="JavaScript" src="js/js.js"></script> 
 <body>
-<div class="canvas" style="opacity: .2">
-	<iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
-	</div>
-<div class="loading">
-  <div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
-</div>
-<div class="head">
-  <h1>大数据可视化展板通用模板</h1>
-  <div class="weather"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span></div>
-	
-	<script>
-var t = null;
-    t = setTimeout(time,1000);//開始运行
-    function time()
-    {
-       clearTimeout(t);//清除定时器
-       dt = new Date();
-		var y=dt.getFullYear();
-		var mt=dt.getMonth()+1;
-		var day=dt.getDate();
-       var h=dt.getHours();//获取时
-       var m=dt.getMinutes();//获取分
-       var s=dt.getSeconds();//获取秒
-       document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"-"+h+"时"+m+"分"+s+"秒";
-       t = setTimeout(time,1000); //设定定时器，循环运行     
-    } 
-
-</script>
-	
-	
-</div>
-<div class="mainbox">
-  <ul class="clearfix">
-    <li>
-      <div class="boxall" style="height: 3.2rem">
-        <div class="alltitle">模块标题样式</div>
-        <div class="allnav" id="echart1"></div>
-        <div class="boxfoot"></div>
-      </div>
-      <div class="boxall" style="height: 3.2rem">
-        <div class="alltitle">模块标题样式</div>
-        <div class="allnav" id="echart2"></div>
-        <div class="boxfoot"></div>
-      </div>
-      <div class="boxall" style="height: 3.2rem">
-        <div style="height:100%; width: 100%;">
-		  	<div class="sy" id="fb1"></div>
-				<div class="sy" id="fb2"></div>
-				<div class="sy" id="fb3"></div>
-		  </div>
-        <div class="boxfoot">
-			
-		  </div>
-      </div>
-    </li>
-    <li>
-      <div class="bar">
-        <div class="barbox">
-          <ul class="clearfix">
-            <li class="pulll_left counter">12581189</li>
-            <li class="pulll_left counter">3912410</li>
-          </ul>
-        </div>
-        <div class="barbox2">
-          <ul class="clearfix">
-            <li class="pulll_left">2018年总收入情况 </li>
-            <li class="pulll_left">2018年总支出情况</li>
-          </ul>
-        </div>
-      </div>
-      <div class="map">
-        <div class="map1"><img src="picture/lbx.png"></div>
-        <div class="map2"><img src="picture/jt.png"></div>
-        <div class="map3"><img src="picture/map.png"></div>
-        <div class="map4" id="map_1"></div>
-      </div>
-    </li>
-    <li>
-          <div class="boxall" style="height:3.4rem">
-        <div class="alltitle">模块标题样式</div>
-        <div class="allnav" id="echart4"></div>
-        <div class="boxfoot"></div>
-      </div>
-      <div class="boxall" style="height: 3.2rem">
-        <div class="alltitle">模块标题样式</div>
-        <div class="allnav" id="echart5"></div>
-        <div class="boxfoot"></div>
-      </div>
-      <div class="boxall" style="height: 3rem">
-        <div class="alltitle">模块标题样式</div>
-        <div class="allnav" id="echart6"></div>
-        <div class="boxfoot"></div>
-      </div>
-    </li>
-  </ul>
-</div>
-<div class="back"></div>
-
-
-<script type="text/javascript" src="js/china.js"></script> 
-<script type="text/javascript" src="js/area_echarts.js"></script> 
+    <div>主要内容</div>
+    <div class="title" style="border:1px solid black;height: 200px;overflow: auto;">
+    </div>
+    </textarea>
+    <div>演示信息</div>
+    <div class="content" style="border:1px solid black;">
+        <ul>
+        </ul>
+    </div>
 </body>
 </html>
